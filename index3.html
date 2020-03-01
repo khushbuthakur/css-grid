@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid</title>
+    <style>
+        .wrapper,
+        .wrapper2 {
+            display: grid;
+            /* fr is fraction, it divides the area into fraction */
+            grid-template-columns: 1fr 2fr 1fr;
+            /* 100px height by default, but auto so as to fit any content */
+            grid-auto-rows: minmax(100px, auto);
+            gap: 1em;
+            /* strecth is default of justify-items & align-items */
+            /* justify-items: center; */
+            /* align-items: center; */
+        }
+
+        .grid-wrapper>div {
+            background: rgb(252, 216, 216);
+            padding: 1em;
+        }
+
+        .grid-wrapper>div:nth-child(odd) {
+            background: rgb(194, 240, 248);
+        }
+
+        .box1 {
+            align-self: start;
+        }
+
+        .box2 {
+            align-self: end;
+        }
+
+        .box3 {
+            align-self: start;
+            justify-self: center;
+        }
+
+        .box-01 {
+            /* start column at 1 and end at 2 */
+            grid-column: 1/2;
+            /* start row at 1 and end at 3 */
+            grid-row: 1/3;
+        }
+
+        .box-04 {
+            grid-column: 2/4;
+        }
+
+        .box-05 {
+            grid-column: 1/4;
+            justify-items: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper grid-wrapper">
+
+        <!-- emmet : div.box.box$*4{Box$} -->
+
+        <div class="box box1">Box1</div>
+        <div class="box box2">Box2</div>
+        <div class="box box3">Box3</div>
+        <div class="box box4">Box4</div>
+    </div>
+
+    <br><br><br><br>
+
+    <div class="wrapper2 grid-wrapper">
+        <div class="box-1 box-01">Box1</div>
+        <div class="box-1 box-02">Box2</div>
+        <div class="box-1 box-03">Box3</div>
+        <div class="box-1 box-04">Box4</div>
+        <div class="box-1 box-05">Box5</div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid</title>
+    <style>
+        .wrapper {
+            display: grid;
+            /* fr is fraction, it divides the area into fraction */
+            grid-template-columns: 1fr 2fr 1fr;
+        }
+
+        .wrapper1 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .wrapper2 {
+            display: grid;
+            grid-template-columns: repeat(2, 2fr);
+            gap: 10px;
+            /* equals height of all divs in a row */
+            grid-auto-rows: minmax(100px, auto);
+        }
+
+        .nested {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-auto-rows: 70px;
+            gap: 1em;
+        }
+
+        .nested>div {
+            padding: 1em;
+            text-align: center;
+            border: 1px groove blue;
+        }
+
+        .grid-wrapper>div {
+            background: rgb(255, 233, 245);
+            padding: 1em;
+        }
+
+        .grid-wrapper>div:nth-child(odd) {
+            background: rgb(213, 241, 227);
+        }
+    </style>
+</head>
+
+<body>
+
+    <pre>
+        <code>
+            grid-template-columns: 1fr 2fr 1fr;
+        </code>
+    </pre>
+    <div class="wrapper grid-wrapper">
+        <div>Lorem ipsum dolor sit.</div>
+        <div>Lorem ipsum dolor sit.</div>
+        <div>Lorem ipsum dolor sit.</div>
+        <div>Lorem ipsum dolor sit.</div>
+    </div>
+
+    <pre>
+        <code>
+            grid-template-columns: repeat(3, 1fr);
+        </code>
+    </pre>
+    <div class="wrapper1 grid-wrapper">
+        <div>Lorem ipsum dolor sit.</div>
+        <div>Lorem ipsum dolor sit.</div>
+        <div>Lorem ipsum dolor sit.</div>
+        <div>Lorem ipsum dolor sit.</div>
+    </div>
+
+    <pre>
+        <code>
+            <!-- equal height -->
+            grid-auto-rows: minmax(100px, auto);
+            <i>Equals height of all divs in a row </i>
+        </code>
+    </pre>
+
+    <div class="wrapper2 grid-wrapper">
+        <div>Lorem ipsum dolor sit.</div>
+        <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. In ipsum porro facilis doloribus aperiam
+            inventore voluptatibus! Porro, vero? Soluta dolor quibusdam harum voluptate magnam ex, quaerat eum iusto
+            fugiat modi aperiam cumque incidunt sed unde veniam nisi autem quidem non!</div>
+        <div class="nested">
+            <div>Lorem ipsum dolor sit amet.</div>
+            <div>Lorem ipsum dolor sit amet.</div>
+            <div>Lorem ipsum dolor sit amet.</div>
+            <div>Lorem ipsum dolor sit amet.</div>
+            <div>Lorem ipsum dolor sit amet.</div>
+            <div>Lorem ipsum dolor sit amet.</div>
+            <div>Lorem ipsum dolor sit amet.</div>
+            <div>Lorem ipsum dolor sit amet.</div>
+        </div>
+        <div>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus culpa libero, incidunt veniam eos quis
+            eum nulla saepe tempore ipsum ipsa itaque modi a natus. Cumque, ipsa! Culpa velit accusamus reiciendis ipsam
+            totam eos magni facere, suscipit in iure tempore doloribus nam cumque autem expedita iste! Aut impedit
+            ducimus nulla, praesentium inventore ut quod autem numquam. Quis, assumenda quo! Soluta expedita dolorem
+            maiores deserunt quas. Ullam distinctio magnam laboriosam delectus laudantium expedita nihil officia omnis
+            voluptatibus et. Voluptas beatae quasi quam, veniam illum quia. Repellendus nobis quidem voluptas neque eos
+            vero similique, sit a, deserunt quam dignissimos. Quos, alias deleniti.</div>
+        <div>Lorem ipsum dolor sit.</div>
+        <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. In ipsum porro facilis doloribus aperiam
+            inventore voluptatibus! Porro, vero? Soluta dolor quibusdam harum voluptate magnam ex, quaerat eum iusto
+            fugiat modi aperiam cumque incidunt sed unde veniam nisi autem quidem non!</div>
+        <div>Lorem ipsum dolor sit.</div>
+        <div>Lorem ipsum dolor sit.</div>
+        <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. In ipsum porro facilis doloribus aperiam
+            inventore voluptatibus! Porro, vero? Soluta dolor quibusdam harum voluptate magnam ex, quaerat eum iusto
+            fugiat modi aperiam cumque incidunt sed unde veniam nisi autem quidem non!</div>
+        <div>Lorem ipsum dolor sit.</div>
+        <div>Lorem ipsum dolor sit.</div>
+
+    </div>
+</body>
+
+</html>
